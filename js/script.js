@@ -24,8 +24,7 @@ function menuMobileToggle(){
 }
 function animationClass(windowTop){
     arrTop.forEach((item)=>{
-        console.log(item.offsetTop);
-        if((item.offsetTop-400)<windowTop){    
+        if((item.offsetTop-500)<windowTop){    
             item.classList.add("slide-in-left");
            
            }
@@ -33,9 +32,7 @@ function animationClass(windowTop){
    
 }
 
-menuMobile.addEventListener('click', () =>{
-    menuMobileToggle();
-})
+
 
 botoes.forEach((botao, index) =>{   
     botao.addEventListener("click", ()=>{
@@ -46,11 +43,13 @@ botoes.forEach((botao, index) =>{
 
         removeActive(currentActiveButton[0]);
         activeButton(actualActiveButton);
-        console.log(currentActiveExperience[0], experienceList[indexList])
         removeActive(currentActiveExperience[0])
         activeButton(experienceList[indexList]);
                               
 })
+})
+menuMobile.addEventListener('click', () =>{
+    menuMobileToggle();
 })
 window.addEventListener("scroll", () => {
     animationClass(window.scrollY);

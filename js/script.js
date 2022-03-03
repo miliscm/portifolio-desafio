@@ -9,7 +9,6 @@ const projectTop = document.querySelectorAll(".project-content");
 
 let actualActiveButton;
 let arrTop = [profileTop,experienceTop,...projectTop];
-console.log(arrTop)
 
 function activeButton(i){
     i.classList.add('active')

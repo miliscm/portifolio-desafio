@@ -351,6 +351,7 @@ button{
 .experience-history{
     position: relative;
     margin-top: 20px;
+    opacity: 0;
     
 }
 .experience-content{
@@ -413,7 +414,9 @@ button{
     gap: 80px 20px;
     padding: 0;
 }
-
+.project-content{
+    opacity: 0;
+}
 .project-content h4{
     color: var(--white);
     font-weight: 500;

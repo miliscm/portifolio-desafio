@@ -2,8 +2,14 @@ const botoes = document.querySelectorAll('.btn');
 const experienceList = document.querySelectorAll('.experience-content');
 const menuMobile = document.querySelector('.menu');
 const navMobile = document.querySelector(".nav-pages-mobile")
-const profileTop= document.querySelector(".profile-about").offsetTop;
+const profileTop= document.querySelector(".profile-about");
+const experienceTop = document.querySelector(".experience-history");
+const projectTop = document.querySelectorAll(".project-content");
+
+
 let actualActiveButton;
+let arrTop = [profileTop,experienceTop,...projectTop];
+console.log(arrTop)
 
 function activeButton(i){
     i.classList.add('active')
@@ -18,9 +24,14 @@ function menuMobileToggle(){
     
 }
 function animationClass(windowTop){
-   if((profileTop-300)<windowTop){    
-    document.querySelector(".profile-about").classList.add("slide-in-left")
-   }
+    arrTop.forEach((item)=>{
+        console.log(item.offsetTop);
+        if((item.offsetTop-400)<windowTop){    
+            item.classList.add("slide-in-left");
+           
+           }
+    })
+   
 }
 
 menuMobile.addEventListener('click', () =>{
@@ -28,7 +39,6 @@ menuMobile.addEventListener('click', () =>{
 })
 
 botoes.forEach((botao, index) =>{   
-    console.log('ok')
     botao.addEventListener("click", ()=>{
         let indexList = index;
         let currentActiveButton = document.getElementsByClassName('btn active')
@@ -38,8 +48,8 @@ botoes.forEach((botao, index) =>{
         removeActive(currentActiveButton[0]);
         activeButton(actualActiveButton);
         console.log(currentActiveExperience[0], experienceList[indexList])
-         removeActive(currentActiveExperience[0])
-         activeButton(experienceList[indexList]);
+        removeActive(currentActiveExperience[0])
+        activeButton(experienceList[indexList]);
                               
 })
 })

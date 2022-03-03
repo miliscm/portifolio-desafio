@@ -254,6 +254,9 @@ a{
     padding: 6.25rem 0;
 
 }
+.profile-about{
+    opacity: 0;
+}
 .profile .container{
     display: grid;
     align-items: flex-start;
@@ -263,8 +266,12 @@ a{
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 40px;
+    
 
 }
+
+
+
 .profile-about p{
     font-size: 1.125rem;
     color: var(--gray);
@@ -2510,4 +2517,33 @@ footer p:last-child{
     -webkit-animation: animate-svg-stroke-69 0.1s ease 2.3600000000000003s both;
             animation: animate-svg-stroke-69 0.1s ease 2.3600000000000003s both;
   }
-  
+  .slide-in-left {
+    
+	-webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-in-left {
+    0% {
+      -webkit-transform: translateX(-1000px);
+              transform: translateX(-1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-left {
+    0% {
+      -webkit-transform: translateX(-1000px);
+              transform: translateX(-1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }

@@ -2,6 +2,7 @@ const botoes = document.querySelectorAll('.btn');
 const experienceList = document.querySelectorAll('.experience-content');
 const menuMobile = document.querySelector('.menu');
 const navMobile = document.querySelector(".nav-pages-mobile")
+const profileTop= document.querySelector(".profile-about").offsetTop;
 let actualActiveButton;
 
 function activeButton(i){
@@ -15,6 +16,11 @@ function menuMobileToggle(){
     navMobile.classList.toggle('active');
     document.querySelector('.menu').classList.toggle('active')
     
+}
+function animationClass(windowTop){
+   if((profileTop-300)<windowTop){    
+    document.querySelector(".profile-about").classList.add("slide-in-left")
+   }
 }
 
 menuMobile.addEventListener('click', () =>{
@@ -36,4 +42,8 @@ botoes.forEach((botao, index) =>{
          activeButton(experienceList[indexList]);
                               
 })
+})
+window.addEventListener("scroll", () => {
+    animationClass(window.scrollY);
+    
 })

@@ -104,6 +104,7 @@ a{
 .nav-pages-mobile a{
     padding: 12px 0;
 }
+
 .nav-title-mobile .menu{
     transform: rotate(90deg);
     
@@ -156,7 +157,12 @@ a{
     font-size: 1.125rem;
     letter-spacing: 0.03rem;   
     margin: auto;
+    transition: 0.2s;
 }
+.nav-pages a:hover{
+  filter: brightness(0.8);    
+}
+
 .container-mobile .menu span{
     background: var(--gray);
     border: 1px solid var(--gray);
@@ -239,6 +245,7 @@ a{
     transition: .1s;
        
 }
+
 .buttons span img{
     padding: 0 1rem;
 }
@@ -246,6 +253,7 @@ a{
 .buttons span:hover{
     background:var(--black-100);
     transform: scale(0.98);
+    filter: brightness(0.8);
 }
 
 .profile{
@@ -336,6 +344,9 @@ button{
     border-bottom: 0;
     border-right: 0;
     white-space: nowrap;
+}
+.btn:hover{
+    filter: brightness(0.8);
 }
 .btn.active{
     background: var(--black-10);
